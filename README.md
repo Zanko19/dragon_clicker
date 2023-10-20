@@ -34,5 +34,5 @@
 
 # bonus random
 
-1 - qui rapporte des oeufs
-2 - qui met un bonus de temps
+1 rapporte des oeufs
+2 met un bonus de temps (ex: oeuf*200%)
