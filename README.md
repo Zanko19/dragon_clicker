@@ -1,6 +1,11 @@
 # dragon_clicker
 
-# cookie clicker
+# team
+
+- Justin De Roover : Project Management / FrontEnd
+- Guillaume Dedeurwaerder : FrontEnd
+- Ayoub Legouirah : BackEnd
+- Burak : BackEnd
 
 ### oeuf dragon
 
