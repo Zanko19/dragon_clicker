@@ -27,7 +27,7 @@
 # bonus
 
 - dresseur de dragon I II III IV V
-- fouet I II III IV V
+- Dragon Ball I II III IV V
 - monture I II III IV V
 - la flamme I II III IV V
 - mere des dragons I II III IV V
