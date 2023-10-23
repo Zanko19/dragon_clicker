@@ -1,38 +1,70 @@
-# dragon_clicker
+# Dragon Clicker 🐉
 
-# team
+Un jeu amusant où vous cliquez pour avoir un maximum d'oeufs de dragons ! [Jouez dès maintenant](URL_DU_SITE)
 
-- Justin De Roover : Project Management / FrontEnd
-- Guillaume Dedeurwaerder : FrontEnd
-- Ayoub Legouirah : BackEnd
-- Burakcan Burcak : BackEnd
+## Équipe
 
-### oeuf dragon
+- Justin De Roover 🧙‍♂️ : Gestion de projet / FrontEnd
+- Guillaume Dedeurwaerder 👨‍💻 : FrontEnd
+- Ayoub Legouirah 🧙‍♂️ : BackEnd
+- Burakcan Burcak 👨‍💻 : BackEnd
 
-[image-oeuf](https://fr.freepik.com/vecteurs-libre/oeufs-dragon-dessin-anime-differents-ensembles-coquilles-oeufs_27310137.htm#query=oeuf%20dragon&position=3&from_view=keyword&track=ais)
+## Oeuf de Dragon 🥚
 
-# boutique
+![image-oeuf](https://img.freepik.com/vecteurs-libre/oeufs-dragon-dessin-anime-differents-ensembles-coquilles-oeufs_107791-12408.jpg?w=1380&t=st=1698066992~exp=1698067592~hmac=bb49b62274d5b328a068983f7ae02da4f89a0ae7fbe36c6146f3704f0afe9b5f)
+((Trouvez des œufs de dragon mystérieux))
 
-- fleche arrow : modifie oeuf/clique
-- vitamines :  modifie oeuf/seconde
-- forgeron  : +2% de production oeuf/seconde
-- mine  : +5% de production oeuf/seconde
-- dragon : +8% de production oeuf/seconde
-- ferme : +10% de production oeuf/clique 
-- incubateur : +12% de production oeuf/clique
-- usine : +15% oeuf/seconde
-- banques : +20% oeuf/seconde
-- elevage de dragon : +25% oeuf/clique
+### Captures d'Écran
 
-# bonus
+- [Capture d'Écran 1](URL_CAPTURE_ECRAN_1)
+- [Capture d'Écran 2](URL_CAPTURE_ECRAN_2)
+- [Capture d'Écran 3](URL_CAPTURE_ECRAN_3)
 
-- dresseur de dragon I II III IV V  * 5,10,15,20,25
-- Dragon Ball I II III IV V         * 5,10,15,20,25
-- monture I II III IV V             * 5,10,15,20,25
-- la flamme I II III IV V           * 5,10,15,20,25 
-- mere des dragons I II III IV V    * 5,10,15,20,25
+## Boutique 🏪
 
-# bonus random
+Explorez la boutique magique pour acheter des améliorations et des ressources pour votre empire.
 
-- 1 rapporte un nombre aleatoire d'oeuf au total
-- (2 met un bonus de temps (ex: oeuf*200%) )
+- Flèche 🏹 : modifie oeuf/clique
+- Vitamines 💊 : modifie oeuf/seconde
+- Forgeron 🔨 : +2% de production oeuf/seconde
+- Mine ⛏️ : +5% de production oeuf/seconde
+- Dragon 🐲 : +8% de production oeuf/seconde
+- Ferme 🚜 : +10% de production oeuf/clique
+- Incubateur 🥚 : +12% de production oeuf/clique
+- Usine 🏭 : +15% oeuf/seconde
+- Banques 🏦 : +20% oeuf/seconde
+- Élevage de dragon 🐣 : +25% oeuf/clique
+
+## Bonus 🌟
+
+Débloquez des bonus puissants pour améliorer votre empire et devenir un maître des oeufs de dragons !
+
+- Dresseur de Dragon I II III IV V 🐉 : 5,10,15,20,25
+- Dragon Ball I II III IV V 🐲 : 5,10,15,20,25
+- Monture I II III IV V 🏇 : 5,10,15,20,25
+- La Flamme I II III IV V 🔥 : 5,10,15,20,25
+- Mère des Dragons I II III IV V 🐉 : 5,10,15,20,25
+
+## Bonus Aléatoires 🎲
+
+Obtenez des bonus aléatoires pour des surprises inattendues :
+
+- 🥚 1 : Rapporte des œufs supplémentaires
+- (🕒 2 : Applique un bonus de temps (ex: œufs*200%))
+
+## Technologies Utilisées 🛠️
+
+Ce projet est construit en utilisant les technologies suivantes :
+
+- HTML
+- CSS
+- JavaScript
+- SASS
+- Vite.js
+
+## Sources Utilisées
+
+- [Source 1](URL_SOURCE_1)
+- [Source 2](URL_SOURCE_2)
+
+Amusez-vous bien à cliquer pour les oeufs de dragons et à bâtir votre empire !
