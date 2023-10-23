@@ -16,7 +16,7 @@ Un jeu amusant où vous cliquez pour avoir un maximum d'oeufs de dragons ! [Joue
 
 ### Captures d'Écran
 
-- [Capture d'Écran 1](URL_CAPTURE_ECRAN_1)
+- ![Maquette_figma](./assets/screen/maquette_figma.png)
 - [Capture d'Écran 2](URL_CAPTURE_ECRAN_2)
 - [Capture d'Écran 3](URL_CAPTURE_ECRAN_3)
 
@@ -39,11 +39,11 @@ Explorez la boutique magique pour acheter des améliorations et des ressources p
 
 Débloquez des bonus puissants pour améliorer votre empire et devenir un maître des oeufs de dragons !
 
-- Dresseur de Dragon I II III IV V 🐉 : 5,10,15,20,25
-- Dragon Ball I II III IV V 🐲 : 5,10,15,20,25
-- Monture I II III IV V 🏇 : 5,10,15,20,25
-- La Flamme I II III IV V 🔥 : 5,10,15,20,25
-- Mère des Dragons I II III IV V 🐉 : 5,10,15,20,25
+- Dresseur de Dragon I II III IV V 🐉 * 5,10,15,20,25%
+- Dragon Ball I II III IV V 🐲 : * 5,10,15,20,25%
+- Monture I II III IV V 🏇 : * 5,10,15,20,25%
+- La Flamme I II III IV V 🔥 : * 5,10,15,20,25%
+- Mère des Dragons I II III IV V 🐉 : * 5,10,15,20,25%
 
 ## Bonus Aléatoires 🎲
 
@@ -59,12 +59,11 @@ Ce projet est construit en utilisant les technologies suivantes :
 - HTML
 - CSS
 - JavaScript
-- SASS
 - Vite.js
 
 ## Sources Utilisées
 
-- [Source 1](URL_SOURCE_1)
-- [Source 2](URL_SOURCE_2)
+- [Image freepik](https://fr.freepik.com/)
+- [Unsplash](https://unsplash.com/fr)
 
 Amusez-vous bien à cliquer pour les oeufs de dragons et à bâtir votre empire !
