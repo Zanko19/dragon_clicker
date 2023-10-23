@@ -1,4 +1,4 @@
-# Dragon Clicker 🐉
+# Dragon Clicker (en cours) 🐉
 
 Un jeu amusant où vous cliquez pour avoir un maximum d'oeufs de dragons ! [Jouez dès maintenant](URL_DU_SITE)
 
