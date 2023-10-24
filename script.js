@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  setInterval(updatePageTitle, 1000);
-  function updatePageTitle() {
-    document.title = "Eggs: " + eggs;
-  }
   /**
    * fonction qui met a jour l'image de l'oeuf de dragon pour chaque palier d'oeuf debloqué
    *
