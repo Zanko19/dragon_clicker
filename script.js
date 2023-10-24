@@ -1,6 +1,7 @@
 // Score d'œufs actuel
 let eggs = 0;
 
+
 function addRandomEggBonus() {
 
   // Bonus aléatoire entre 50 000 et 200 000 œufs
