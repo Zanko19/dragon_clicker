@@ -1,4 +1,7 @@
-
+/**
+ * fonction qui met a jour l'image de l'oeuf de dragon
+ *
+ */
 function updateEggImage() {
   const eggImage = document.getElementById("egg-image");
 
@@ -44,5 +47,4 @@ function updateEggImage() {
   }
   eggImage.src = imageSrc;
 }
-
 updateEggImage();
