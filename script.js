@@ -58,10 +58,4 @@ function loadEggs() {
     eggs = parseInt(savedEggs);
   }
 }
-function updateEggsCount() {
-  const eggsCountElement = document.getElementById("egg-count");
-  eggsCountElement.textContent = eggs + "eggs";
-}
-
 loadEggs();
-updateEggsCount();
