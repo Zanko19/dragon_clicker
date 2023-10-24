@@ -8,9 +8,6 @@ function updateEggImage() {
   let imageSrc;
 
   switch (true) {
-    case eggs < 1000:
-      imageSrc = "assets/dragon_egg/oeuf_dragon_1.png";
-      break;
     case eggs < 5000:
       imageSrc = "assets/dragon_egg/oeuf_dragon_2.png";
       break;
@@ -49,9 +46,13 @@ function updateEggImage() {
 }
 updateEggImage();
 
+/**
+ * function localStorage
+ */
 function saveEggs() {
   localStorage.setItem("eggs", eggs);
 }
+
 function loadEggs() {
   const savedEggs = localStorage.getItem("eggs");
   if (savedEggs !== null) {
