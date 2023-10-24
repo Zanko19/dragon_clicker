@@ -1,5 +1,7 @@
-let eggs = 0;
 
+let eggs = 0;
+let eggPerSecond = 0;
+let eggPerClick = 1;
 
 
 
@@ -9,7 +11,7 @@ let boutiqueList = [
         description: "Augmente le nombre d'oeufs par clic",
         price: 30,
         effect: function () {
-            
+            eggPerClick += 5;
         }
     },
     {
@@ -17,7 +19,7 @@ let boutiqueList = [
         description: "Augmente le nombre d'oeufs par seconde (5)",
         price: 60,
         effect: function () {
-            setInterval(addEggs(5), 1000);
+            eggPerSecond = 5;
         }
     },
     {
@@ -25,7 +27,8 @@ let boutiqueList = [
         description: "+2% de production oeuf par seconde",
         price: 100,
         effect: function () {
-            // Code pour doubler la production d'œufs de dragon
+            eggPerSecond += 1;
+            // eggPerSecond += (eggPerSecond * 0.02);
         }
     },
     {
@@ -33,7 +36,7 @@ let boutiqueList = [
         description: "+5% de production oeuf par seconde",
         price: 150,
         effect: function () {
-            // Code pour doubler la production d'œufs de dragon
+            eggPerSecond += (eggPerSecond * 0.05);
         }
     },
     {
@@ -41,7 +44,7 @@ let boutiqueList = [
         description: "+8% de production oeuf par seconde",
         price: 200,
         effect: function () {
-            // Code pour doubler la production d'œufs de dragon
+            eggPerSecond += (eggPerSecond * 0.08);
         }
     },
     {
@@ -49,7 +52,7 @@ let boutiqueList = [
         description: "+10% de production oeuf par clic",
         price: 400,
         effect: function () {
-            // Code pour doubler la production d'œufs de dragon
+            eggPerClick += (eggPerClick * 0.1);
         }
     },
     {
@@ -84,10 +87,26 @@ let boutiqueList = [
             // Code pour doubler la production d'œufs de dragon
         }
     },
-
-
 ];
 
-function addEggs(nb){
-    eggs+=nb;
+function addEggs(nb) {
+    eggs += nb;
+    eggCounter.innerHTML = eggs;
 }
+
+function addEggPerSecond() {
+    setInterval(addEggs(eggPerSecond), 1000);
+}
+
+const eggImg = document.getElementById("eggImg");
+const eggCounter = document.getElementById("egg-count");
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    eggImg.addEventListener("click", function () {
+        console.log("click : " + eggs);
+        addEggs(eggPerClick);
+    });
+});
