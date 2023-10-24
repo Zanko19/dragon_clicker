@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "MedievalSharp", cursive;
 }
 body,
 html {
@@ -21,6 +24,8 @@ html {
   #shop-container {
     width: 30%;
     height: 100%;
+    .bonus {
+    }
   }
   #egg-container {
     width: 45%;
@@ -34,6 +39,12 @@ html {
     cursor: pointer;
     img {
       width: 350px;
+    }
+    #egg-count {
+      background-color: #ff2500;
+      border-radius: 25px;
+      padding: 15px;
+      box-shadow: 32px 56px 80px rgba(0, 0, 0, 0.61);
     }
   }
   #cards-container {
