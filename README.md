@@ -57,7 +57,7 @@ Obtenez des bonus aléatoires pour des surprises inattendues :
 Ce projet est construit en utilisant les technologies suivantes :
 
 - HTML
-- CSS
+- SASS
 - JavaScript
 - Vite.js
 
