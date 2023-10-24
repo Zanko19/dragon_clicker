@@ -4,7 +4,7 @@ import "./script.js";
 document.addEventListener("DOMContentLoaded", function () {
   const eggElement = document.getElementById("egg-container");
   let eggCount = 0;
-  const clicsRequis = 30;
+  const clicsRequis = 1;
 
   function incrementEggCount() {
     eggCount++;
