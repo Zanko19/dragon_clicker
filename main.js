@@ -1,26 +1,32 @@
 import "./style.scss";
 import "./script.js";
-// Attendez que le DOM soit chargé
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Sélectionnez l'élément d'œuf
-    const eggElement = document.getElementById("egg-container");
-  
-    // Initialisez le compteur d'œufs
-    let eggs = 0;
-  
-    // Fonction pour incrémenter le compteur d'œufs
-    function incrementEggCount() {
-      eggs++;
-      updateEggCounter();
+  const eggElement = document.getElementById("egg-container");
+  let eggCount = 0;
+  const clicsRequis = 30;
+
+  function incrementEggCount() {
+    eggCount++;
+    updateEggCounter();
+
+    if (eggCount === clicsRequis) {
+      startAutoClick();
     }
-  
-    // Fonction pour mettre à jour le compteur d'œufs sur la page
-    function updateEggCounter() {
-      const eggCounterElement = document.getElementById("egg-count");
-      eggCounterElement.textContent = `Dragon Egg : ${eggs}`;
-    }
-  
-    // Écoutez le clic sur l'œuf
-    eggElement.addEventListener("click", incrementEggCount);
-  });
-  
+  }
+
+  function updateEggCounter() {
+    const eggCounterElement = document.getElementById("egg-count");
+    eggCounterElement.textContent = `Dragon Egg : ${eggCount}`;
+  }
+
+  function startAutoClick() {
+    const autoclickInterval = 1000; // Par exemple, un clic toutes les secondes
+
+    const autoclickIntervalId = setInterval(() => {
+      incrementEggCount();
+    }, autoclickInterval);
+  }
+
+  eggElement.addEventListener("click", incrementEggCount);
+});
