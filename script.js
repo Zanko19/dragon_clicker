@@ -48,3 +48,20 @@ function updateEggImage() {
   eggImage.src = imageSrc;
 }
 updateEggImage();
+
+function saveEggs() {
+  localStorage.setItem("eggs", eggs);
+}
+function loadEggs() {
+  const savedEggs = localStorage.getItem("eggs");
+  if (savedEggs !== null) {
+    eggs = parseInt(savedEggs);
+  }
+}
+function updateEggsCount() {
+  const eggsCountElement = document.getElementById("egg-count");
+  eggsCountElement.textContent = eggs + "eggs";
+}
+
+loadEggs();
+updateEggsCount();
