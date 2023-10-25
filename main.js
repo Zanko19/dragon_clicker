@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function startAutoClick() {
-    const autoclickInterval = 100;
+    const autoclickInterval = 1000;
 
     const autoclickIntervalId = setInterval(() => {
       incrementEggCount();
