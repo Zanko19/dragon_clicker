@@ -8,6 +8,16 @@ Un jeu amusant où vous cliquez pour avoir un maximum d'oeufs de dragons ! [Joue
 - Guillaume Dedeurwaerder 👨‍💻 : FrontEnd
 - Ayoub Legouirah 🧙‍♂️ : BackEnd
 - Burakcan Burcak 👨‍💻 : BackEnd
+# Dragon Clicker (en cours) 🐉
+
+Un jeu amusant où vous cliquez pour avoir un maximum d'oeufs de dragons ! [Jouez dès maintenant](URL_DU_SITE)
+
+## Équipe
+
+- Justin De Roover 🧙‍♂️ : Gestion de projet / FrontEnd
+- Guillaume Dedeurwaerder 👨‍💻 : FrontEnd
+- Ayoub Legouirah 🧙‍♂️ : BackEnd
+- Burakcan Burcak 👨‍💻 : BackEnd
 
 ## Oeuf de Dragon 🥚
 
@@ -39,25 +49,25 @@ Explorez la boutique magique pour acheter des améliorations et des ressources p
 
 Débloquez des bonus puissants pour améliorer votre empire et devenir un maître des oeufs de dragons !
 
-- Dresseur de Dragon I II III IV V 🐉 * 5,10,15,20,25%
-- Dragon Ball I II III IV V 🐲 : * 5,10,15,20,25%
-- Monture I II III IV V 🏇 : * 5,10,15,20,25%
-- La Flamme I II III IV V 🔥 : * 5,10,15,20,25%
-- Mère des Dragons I II III IV V 🐉 : * 5,10,15,20,25%
+- Dresseur de Dragon I II III IV V 🐉 \* 5,10,15,20,25%
+- Dragon Ball I II III IV V 🐲 : \* 5,10,15,20,25%
+- Monture I II III IV V 🏇 : \* 5,10,15,20,25%
+- La Flamme I II III IV V 🔥 : \* 5,10,15,20,25%
+- Mère des Dragons I II III IV V 🐉 : \* 5,10,15,20,25%
 
 ## Bonus Aléatoires 🎲
 
 Obtenez des bonus aléatoires pour des surprises inattendues :
 
 - 🥚 1 : Rapporte des œufs supplémentaires
-- (🕒 2 : Applique un bonus de temps (ex: œufs*200%))
+- (🕒 2 : Applique un bonus de temps (ex: œufs\*200%))
 
 ## Technologies Utilisées 🛠️
 
 Ce projet est construit en utilisant les technologies suivantes :
 
 - HTML
-- CSS
+- SASS
 - JavaScript
 - Vite.js
 
