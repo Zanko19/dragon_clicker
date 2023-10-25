@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   eggElement.addEventListener("click", incrementEggCount);
-  
+
   /**
    * function update eggs in pageTitle
    */
@@ -98,9 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   loadEggs();
-
-  // Score d'œufs actuel
-  let eggs = 0;
 
   // Mettre à jour l'affichage du nombre d'œufs
   function updateEggs() {
