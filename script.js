@@ -125,6 +125,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const eggElement = document.getElementById("egg-container");
   const clicsRequis = 1;
   
+document.addEventListener("DOMContentLoaded", function () {
+  const eggElement = document.getElementById("egg-container");
+  let eggs = 0;
+  const clicsRequis = 1;
 
   function incrementEggCount() {
     eggs++;
