@@ -119,9 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
         addEggs(eggPerClick);
     });
 });
-
-
-document.addEventListener("DOMContentLoaded", function () {
   const eggElement = document.getElementById("egg-container");
   const clicsRequis = 1;
   
