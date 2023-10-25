@@ -3,25 +3,25 @@ import "./script.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const eggElement = document.getElementById("egg-container");
-  let eggCount = 0;
+  let eggs = 0;
   const clicsRequis = 1;
 
   function incrementEggCount() {
-    eggCount++;
+    eggs++;
     updateEggCounter();
 
-    if (eggCount === clicsRequis) {
+    if (eggs === clicsRequis) {
       startAutoClick();
     }
   }
 
   function updateEggCounter() {
     const eggCounterElement = document.getElementById("egg-count");
-    eggCounterElement.textContent = `Dragon Egg : ${eggCount}`;
+    eggCounterElement.textContent = `Dragon Egg : ${eggs}`;
   }
 
   function startAutoClick() {
-    const autoclickInterval = 1000; // Par exemple, un clic toutes les secondes
+    const autoclickInterval = 100;
 
     const autoclickIntervalId = setInterval(() => {
       incrementEggCount();
