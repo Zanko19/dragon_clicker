@@ -13,26 +13,26 @@
 
 # boutique
 
-- fleche arrow
-- vitamines
-- forgeron
-- mine
-- dragon
-- ferme
-- incubateur
-- usine
-- banques
-- elevage de dragon
+- fleche arrow : modifie oeuf/clique
+- vitamines :  modifie oeuf/seconde
+- forgeron  : +2% de production oeuf/seconde
+- mine  : +5% de production oeuf/seconde
+- dragon : +8% de production oeuf/seconde
+- ferme : +10% de production oeuf/clique 
+- incubateur : +12% de production oeuf/clique
+- usine : +15% oeuf/seconde
+- banques : +20% oeuf/seconde
+- elevage de dragon : +25% oeuf/clique
 
 # bonus
 
-- dresseur de dragon I II III IV V
-- Dragon Ball I II III IV V
-- monture I II III IV V
-- la flamme I II III IV V
-- mere des dragons I II III IV V
+- dresseur de dragon I II III IV V  * 5,10,15,20,25
+- Dragon Ball I II III IV V         * 5,10,15,20,25
+- monture I II III IV V             * 5,10,15,20,25
+- la flamme I II III IV V           * 5,10,15,20,25 
+- mere des dragons I II III IV V    * 5,10,15,20,25
 
 # bonus random
 
-- 1 rapporte des oeufs
-- 2 met un bonus de temps (ex: oeuf*200%)
+- 1 rapporte un nombre aleatoire d'oeuf au total
+- (2 met un bonus de temps (ex: oeuf*200%) )
