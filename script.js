@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   /**
-   * function pour mettre a jour le nombre d'eggs dans l'onglet
+   * function update eggs in pageTitle
    */
   setInterval(updatePageTitle, 1000);
   function updatePageTitle() {
     document.title = "Eggs: " + eggs;
   }
+
+
   /**
    * fonction qui met a jour l'image de l'oeuf de dragon pour chaque palier d'oeuf debloqué
    *
@@ -54,6 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   updateEggImage();
 
+
+  
   /**
    * function localStorage
    */
