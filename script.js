@@ -3,7 +3,7 @@ let eggs = 0;
 let eggPerSecond = 1;
 let eggPerClick = 1;
 
-
+ 
 
 let boutiqueList = [
     {
