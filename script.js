@@ -1,8 +1,6 @@
-
-let eggs = 0;
+let eggs = 90;
 let eggPerSecond = 1;
 let eggPerClick = 1;
-
 
 
 let boutiqueList = [
@@ -31,70 +29,36 @@ let boutiqueList = [
             // eggPerSecond += (eggPerSecond * 0.02);
         }
     },
-    {
-        name: "Mine",
-        description: "+5% de production oeuf par seconde",
-        price: 150,
-        effect: function () {
-            eggPerSecond += (eggPerSecond * 0.05);
-        }
-    },
-    {
-        name: "Dragon",
-        description: "+8% de production oeuf par seconde",
-        price: 200,
-        effect: function () {
-            eggPerSecond += (eggPerSecond * 0.08);
-        }
-    },
-    {
-        name: "Ferme",
-        description: "+10% de production oeuf par clic",
-        price: 400,
-        effect: function () {
-            eggPerClick += (eggPerClick * 0.1);
-        }
-    },
-    {
-        name: "Incubateur",
-        description: "+12% de production oeuf par clic",
-        price: 800,
-        effect: function () {
-            // Code pour doubler la production d'œufs de dragon
-        }
-    },
-    {
-        name: "Usine",
-        description: "+15% oeuf par seconde",
-        price: 1400,
-        effect: function () {
-            // Code pour doubler la production d'œufs de dragon
-        }
-    },
-    {
-        name: "Banque",
-        description: "+20% oeuf par seconde",
-        price: 1400,
-        effect: function () {
-            // Code pour doubler la production d'œufs de dragon
-        }
-    },
-    {
-        name: "Elevage de dragons",
-        description: "+25% oeuf par clic",
-        price: 1400,
-        effect: function () {
-            // Code pour doubler la production d'œufs de dragon
-        }
-    },
+
 ];
 
-
+/**
+ * fonction qui met a jour l'image de l'oeuf de dragon pour chaque palier d'oeuf debloqué
+ *
+ */
+function updateEggImage() {
+    let eggImg = document.getElementById("egg-image");
+       switch(true){
+        case eggs<100:
+            eggImg.src = "assets/dragon_egg/oeuf_dragon_1.png"
+            break;
+        case eggs<200:
+            eggImg.src = "assets/dragon_egg/oeuf_dragon_2.png"
+            break;;
+        case eggs<300:
+            eggImg.src = "assets/dragon_egg/oeuf_dragon_3.png"
+            break;
+        case eggs<400:
+            eggImg.src = "assets/dragon_egg/oeuf_dragon_4.png"
+            break;
+    }
+}
 
 function addEggs(nb) {
     eggs += nb;
     displayEggs();
     updateEggImage();
+
 }
 
 
@@ -102,62 +66,13 @@ function addEggPerSecond() {
     setInterval(addEggs(eggPerSecond), 1000);
 }
 
-const eggImage = document.getElementById("egg-image");
-
-
-/**
- * fonction qui met a jour l'image de l'oeuf de dragon pour chaque palier d'oeuf debloqué
- *
- */
-function updateEggImage() {
-
-    let imageSrc;
-
-    switch (true) {
-        case eggs < 100:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_2.png";
-            break;
-        case eggs < 10000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_3.png";
-            break;
-        case eggs < 15000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_4.png";
-            break;
-        case eggs < 20000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_5.png";
-            break;
-        case eggs < 50000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_6.png";
-            break;
-        case eggs < 100000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_7.png";
-            break;
-        case eggs < 150000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_8.png";
-            break;
-        case eggs < 200000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_9.png";
-            break;
-        case eggs < 1000000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_10.png";
-            break;
-        case eggs < 1500000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_11.png";
-            break;
-        case eggs < 5000000:
-            imageSrc = "assets/dragon_egg/oeuf_dragon_12.png";
-            break;
-    }
-    eggImage.src = imageSrc;
-}
-
 
 
 function startAutoClick() {
-    const autoclickInterval = 500;
+    const autoclickInterval = 1000;
 
     const autoclickIntervalId = setInterval(() => {
-        incrementEggCount();
+        addEggPerSecond(eggPerSecond);
     }, autoclickInterval);
 }
 
@@ -192,8 +107,6 @@ function RandomEggBonus() {
     const bonusEggs = Math.floor(Math.random() * 150001) + 50000;
     eggs = eggs + bonusEggs;
 
-    updateEggs();
-
     // Bonus aléatoire entre 2 et 5 minutes
     const nextBonusTime = Math.floor(Math.random() * 180000) + 120000;
     setTimeout(function () {
@@ -204,26 +117,24 @@ function RandomEggBonus() {
             // Additionne le montant du bonus du score actuel
             eggs = eggs + bonusEggs;
 
-            updateEggs();
         }, addBonusTime);
     }, nextBonusTime);
 }
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    const eggImage = document.getElementById("egg-image");
 
     loadEggs();
-    updateEggs();
-    RandomEggBonus();
+
+    // RandomEggBonus();
+    // addEggPerSecond();
+
 
     eggImage.addEventListener("click", function () {
         console.log("click : " + eggs);
         addEggs(eggPerClick);
     });
-
-    addEggPerSecond();
-
-    eggElement.addEventListener("click", incrementEggCount);
 
 
 });
