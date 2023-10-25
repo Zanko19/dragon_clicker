@@ -1,6 +1,6 @@
 
 let eggs = 0;
-let eggPerSecond = 0;
+let eggPerSecond = 1;
 let eggPerClick = 1;
 
 
@@ -89,22 +89,30 @@ let boutiqueList = [
     },
 ];
 
+
 function addEggs(nb) {
     eggs += nb;
-    eggCounter.innerHTML = eggs;
+    displayEggs();
 }
 
 function addEggPerSecond() {
-    setInterval(addEggs(eggPerSecond), 1000);
+    // setInterval(addEggs(eggPerSecond), 1000);
+    const autoclickIntervalId = setInterval(() => {
+        addEggs(eggPerSecond);
+    }, 1000);
 }
+
 
 const eggImg = document.getElementById("eggImg");
 const eggCounter = document.getElementById("egg-count");
 
-
+function displayEggs() {
+    eggCounter.innerHTML = eggs;
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-
+    addEggPerSecond();
+    if(eggs)
     eggImg.addEventListener("click", function () {
         console.log("click : " + eggs);
         addEggs(eggPerClick);
