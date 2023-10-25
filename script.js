@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const eggElement = document.getElementById("egg-container");
+  let eggs = 0;
+  const clicsRequis = 1;
+
+  function incrementEggCount() {
+    eggs++;
+    updateEggCounter();
+
+    if (eggs === clicsRequis) {
+      startAutoClick();
+    }
+  }
+
+  function updateEggCounter() {
+    const eggCounterElement = document.getElementById("egg-count");
+    eggCounterElement.textContent = `Dragon Egg : ${eggs}`;
+  }
+
+  function startAutoClick() {
+    const autoclickInterval = 1000;
+
+    const autoclickIntervalId = setInterval(() => {
+      incrementEggCount();
+    }, autoclickInterval);
+  }
+
+  eggElement.addEventListener("click", incrementEggCount);
+  
   /**
    * function update eggs in pageTitle
    */
@@ -6,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function updatePageTitle() {
     document.title = "Eggs: " + eggs;
   }
-
 
   /**
    * fonction qui met a jour l'image de l'oeuf de dragon pour chaque palier d'oeuf debloqué
@@ -56,8 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   updateEggImage();
 
-
-  
   /**
    * function localStorage
    */
@@ -73,41 +98,38 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   loadEggs();
-});
-// Score d'œufs actuel
-let eggs = 0;
 
-// Mettre à jour l'affichage du nombre d'œufs
-function updateEggs() {
-  const eggCountElement = document.getElementById("egg-count");
-  eggCountElement.textContent = eggs;
-}
-updateEggs();
+  // Score d'œufs actuel
+  let eggs = 0;
 
-
-function RandomEggBonus() {
-  // Bonus aléatoire entre 50 000 et 200 000 œufs
-  const bonusEggs = Math.floor(Math.random() * 150001) + 50000;
-  eggs = eggs + bonusEggs;
-
+  // Mettre à jour l'affichage du nombre d'œufs
+  function updateEggs() {
+    const eggCountElement = document.getElementById("egg-count");
+    eggCountElement.textContent = eggs;
+  }
   updateEggs();
 
-  // Bonus aléatoire entre 2 et 5 minutes
-  const nextBonusTime = Math.floor(Math.random() * 180000) + 120000; 
-  setTimeout(function() {
-    // Après un délai entre 2 et 5 minutes, on ajoute le bonus ajouté (entre 10 et 30seconde)
-    const addBonusTime = Math.floor(Math.random() * 20000) + 10000; 
-    
-    setTimeout(function() {
-      // Additionne le montant du bonus du score actuel
-      eggs = eggs + bonusEggs;
-      
-      updateEggs();
-    }, addBonusTime);
-  }, nextBonusTime);
-}
+  function RandomEggBonus() {
+    // Bonus aléatoire entre 50 000 et 200 000 œufs
+    const bonusEggs = Math.floor(Math.random() * 150001) + 50000;
+    eggs = eggs + bonusEggs;
 
-RandomEggBonus();
+    updateEggs();
 
+    // Bonus aléatoire entre 2 et 5 minutes
+    const nextBonusTime = Math.floor(Math.random() * 180000) + 120000;
+    setTimeout(function () {
+      // Après un délai entre 2 et 5 minutes, on ajoute le bonus ajouté (entre 10 et 30seconde)
+      const addBonusTime = Math.floor(Math.random() * 20000) + 10000;
 
+      setTimeout(function () {
+        // Additionne le montant du bonus du score actuel
+        eggs = eggs + bonusEggs;
 
+        updateEggs();
+      }, addBonusTime);
+    }, nextBonusTime);
+  }
+
+  RandomEggBonus();
+});
