@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function incrementEggCount() {
     eggs++;
     updateEggCounter();
+    updateEggImage();
 
     if (eggs === clicsRequis) {
       startAutoClick();
@@ -81,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     eggImage.src = imageSrc;
   }
-  updateEggImage();
 
   /**
    * function localStorage
