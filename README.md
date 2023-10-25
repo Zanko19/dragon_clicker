@@ -8,6 +8,16 @@ Un jeu amusant où vous cliquez pour avoir un maximum d'oeufs de dragons ! [Joue
 - Guillaume Dedeurwaerder 👨‍💻 : FrontEnd
 - Ayoub Legouirah 🧙‍♂️ : BackEnd
 - Burakcan Burcak 👨‍💻 : BackEnd
+# Dragon Clicker (en cours) 🐉
+
+Un jeu amusant où vous cliquez pour avoir un maximum d'oeufs de dragons ! [Jouez dès maintenant](URL_DU_SITE)
+
+## Équipe
+
+- Justin De Roover 🧙‍♂️ : Gestion de projet / FrontEnd
+- Guillaume Dedeurwaerder 👨‍💻 : FrontEnd
+- Ayoub Legouirah 🧙‍♂️ : BackEnd
+- Burakcan Burcak 👨‍💻 : BackEnd
 
 ## Oeuf de Dragon 🥚
 
