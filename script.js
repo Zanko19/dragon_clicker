@@ -59,6 +59,7 @@ function addEggs(nb) {
   eggs += nb;
   displayEggs();
   updateEggImage();
+  updatePageTitle();
 }
 
 function addEggPerSecond() {
@@ -135,5 +136,3 @@ document.addEventListener("DOMContentLoaded", function () {
     addEggs(eggPerClick);
   });
 });
-
-
