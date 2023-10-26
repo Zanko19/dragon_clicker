@@ -8,8 +8,8 @@
 }
 body,
 html {
-  width: 100%;
-  height: 100vh;
+  max-width: 100%;
+  min-height: 100vh;
   background-image: url(assets/background/bg-dragon.jpg);
   background-position: center;
   background-repeat: repeat;
@@ -20,7 +20,7 @@ html {
   height: 100%;
   display: flex;
   align-items: center;
-
+  padding: 1.5rem;
   #shop-container {
     margin-top: 1.5rem;
     width: 26%;
@@ -35,11 +35,12 @@ html {
       display: flex;
       flex-direction: column;
       text-align: center;
+      flex-wrap: wrap;
       color: #fff;
       .bonus,
       .farming {
         display: flex;
-        flex-wrap: wrap;
+        flex-grow: 0;
         justify-content: space-around;
         align-items: center;
         h1 {
