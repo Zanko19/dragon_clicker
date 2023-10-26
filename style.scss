@@ -98,7 +98,7 @@ html {
     justify-content: flex-end;
     gap: 1.5rem;
     .card {
-      margin-top: 1rem;
+      margin-top: 3rem;
       max-width: 150px;
       min-height: 200px;
       color: #fff;
@@ -203,6 +203,9 @@ html {
     }
     #egg-container {
       width: 100%;
+      img {
+        width: 250px;
+      }
     }
   }
 }
