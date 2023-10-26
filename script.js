@@ -117,6 +117,14 @@ function RandomEggBonus() {
 document.addEventListener("DOMContentLoaded", function () {
   const eggImage = document.getElementById("egg-image");
 
+  // effet de bouton sur l'oeuf
+  eggImage.addEventListener("mousedown", () => {
+    eggImage.style.transform = "scale(0.95)";
+  });
+  eggImage.addEventListener("mouseup", () => {
+    eggImage.style.transform = "scale(1)";
+  });
+
   loadEggs();
 
   // RandomEggBonus();
