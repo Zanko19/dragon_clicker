@@ -99,7 +99,7 @@ function loadEggs() {
 
 function displayEggs() {
     const eggCounter = document.getElementById("egg-count");
-    eggCounter.innerHTML =  eggs;
+    eggCounter.innerHTML = eggs;
 }
 
 function RandomEggBonus() {
