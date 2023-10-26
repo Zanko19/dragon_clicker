@@ -7,6 +7,7 @@ let boutiqueList = [
     name: "Fleche",
     description: "Augmente le nombre d'oeufs par clic",
     price: 30,
+    src: "assets/farming_icon/arrow.jpg",
     effect: function () {
       eggPerClick += 5;
     },
@@ -15,6 +16,7 @@ let boutiqueList = [
     name: "Vitamines",
     description: "Augmente le nombre d'oeufs par seconde (5)",
     price: 60,
+    src: "assets/farming_icon/vitamin.png",
     effect: function () {
       eggPerSecond = 5;
     },
@@ -23,6 +25,7 @@ let boutiqueList = [
     name: "Forgeron",
     description: "+2% de production oeuf par seconde",
     price: 100,
+    src: "assets/farming_icon/forge.jpg",
     effect: function () {
       eggPerSecond += 1;
       // eggPerSecond += (eggPerSecond * 0.02);
