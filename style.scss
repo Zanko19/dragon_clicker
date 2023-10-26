@@ -17,7 +17,6 @@ html {
 }
 .container {
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   padding: 1.5rem;
@@ -28,7 +27,6 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
     padding: 10px;
     .shop {
       font-size: 3rem;
@@ -39,13 +37,12 @@ html {
       display: flex;
       flex-direction: column;
       text-align: center;
-      flex-wrap: wrap;
       color: #fff;
+      padding: 10px;
       .bonus,
       .farming {
         display: flex;
-        flex-grow: 0;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         h1 {
           color: #fff;
@@ -104,7 +101,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 10px;
     padding: 10px;
     hr {
       width: 80%;
@@ -116,7 +113,7 @@ html {
     .own_bonus,
     .own_farming {
       display: flex;
-      gap: 1.5rem;
+      gap: 2px;
       .card {
         margin-top: 3rem;
         max-width: 150px;
@@ -127,7 +124,6 @@ html {
         align-items: center;
         justify-content: center;
         display: flex;
-        flex-wrap: wrap;
         gap: 10px;
         padding: 10px;
         border-radius: 10px;
@@ -207,17 +203,9 @@ html {
   }
 }
 @media (max-width: 846px) {
-  body,
-  html {
-    background-image: url(assets/background/bg-dragon.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: inherit;
-  }
   .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     #shop-container {
       order: 1;
       width: 100%;
@@ -225,8 +213,6 @@ html {
     #cards-container {
       order: 2;
       width: 100%;
-      border: solid 1px #fff;
-      border-radius: 10px;
       justify-content: start;
     }
     #egg-container {
@@ -251,15 +237,11 @@ html {
       order: 1;
       width: 100%;
       margin-top: 3rem;
-      border: solid 1px #fff;
-      border-radius: 10px;
     }
     #cards-container {
       order: 2;
       width: 100%;
       margin-top: 3rem;
-      border: solid 1px #fff;
-      border-radius: 10px;
     }
     #egg-container {
       width: 100%;
