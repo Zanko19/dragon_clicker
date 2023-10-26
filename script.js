@@ -1,4 +1,4 @@
-let eggs = 90;
+let eggs = 999;
 let eggPerSecond = 1;
 let eggPerClick = 1;
 

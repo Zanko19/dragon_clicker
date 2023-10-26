@@ -23,13 +23,17 @@ html {
   padding: 1.5rem;
   #shop-container {
     margin-top: 1.5rem;
-    width: 26%;
+    width: 25%;
     height: 100%;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
+    padding: 10px;
+    .shop {
+      font-size: 3rem;
+      padding: 10px;
+    }
     .bonus_container,
     .farming_container {
       display: flex;
@@ -74,7 +78,7 @@ html {
     }
   }
   #egg-container {
-    width: 45%;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -94,16 +98,20 @@ html {
     }
   }
   #cards-container {
-    width: 26%;
+    width: 25%;
     height: 100%;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
+    padding: 10px;
     hr {
       width: 80%;
+    }
+    h1 {
+      font-size: 3rem;
+      color: white;
     }
     .own_bonus,
     .own_farming {
@@ -142,6 +150,8 @@ html {
     }
   }
 }
+
+//cookie banner
 #cb-cookie-banner {
   position: fixed;
   bottom: 10%;
@@ -177,6 +187,7 @@ html {
   }
 }
 
+// media queries
 @media (max-width: 780px) {
   .container {
     display: flex;
@@ -226,7 +237,7 @@ html {
     }
   }
 }
-@media (max-width: 940px) {
+@media (max-width: 1200px) {
   #cb-cookie-banner {
     position: fixed;
     top: 0;
@@ -239,10 +250,16 @@ html {
     #shop-container {
       order: 1;
       width: 100%;
+      margin-top: 3rem;
+      border: solid 1px #fff;
+      border-radius: 10px;
     }
     #cards-container {
       order: 2;
       width: 100%;
+      margin-top: 3rem;
+      border: solid 1px #fff;
+      border-radius: 10px;
     }
     #egg-container {
       width: 100%;
