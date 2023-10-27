@@ -39,22 +39,22 @@ let farmingList = [
 let bonusList = [
   {
     name: "Dragon Ball",
-    description: "increase your production by 5%",
+    description: "multiply your egg per second by 2",
     price: 100,
     src: "assets/bonus_icon/dragon-ball.png",
     effect: function () {
       eggs = eggs - this.price;
-      eggPerSecond *= 0.5;
+      eggPerSecond *= 2;
     },
   },
   {
     name: "Dragon Trainer",
-    description: "increase your production by 10%",
+    description: "multiply your egg per second by 5",
     price: 150,
     src: "assets/bonus_icon/dragon_trainer.jpg",
     effect: function () {
       eggs = eggs - this.price;
-      eggPerSecond *= 0.1;
+      eggPerSecond *= 5;
     },
   },
 ];
