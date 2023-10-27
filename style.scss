@@ -142,7 +142,7 @@ html {
       .card {
         margin-top: 3rem;
         max-width: 150px;
-        min-height: 200px;
+        min-height: 150px;
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -162,7 +162,7 @@ html {
         }
         .card_img {
           object-fit: cover;
-          width: 100px;
+          width: 80px;
         }
         .number {
           font-size: 2rem;

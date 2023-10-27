@@ -144,6 +144,12 @@ function loadEggs() {
   if (savedEggs !== null) {
     eggs = parseInt(savedEggs);
   }
+  if (savedEggPerSecond !== null) {
+    eggPerSecond = parseInt(savedEggPerSecond);
+  }
+  if (savedEggPerClick !== null) {
+    eggPerClick = parseInt(savedEggPerClick);
+  }
 }
 
 function displayEggs() {
