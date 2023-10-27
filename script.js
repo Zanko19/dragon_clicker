@@ -18,7 +18,7 @@ let boutiqueList = [
     price: 60,
     src: "assets/farming_icon/vitamin.png",
     effect: function () {
-      eggPerSecond = 5;
+      eggPerSecond += 5;
     },
   },
   {
@@ -94,7 +94,10 @@ function loadEggs() {
 
 function displayEggs() {
   const eggCounter = document.getElementById("egg-count");
+  const eggPerSecCounter = document.getElementById("eggPerSec-count");
+
   eggCounter.innerHTML = "Eggs : " + eggs;
+  eggPerSecCounter.innerHTML = "Eggs/second: " + eggPerSecond;
 }
 
 function RandomEggBonus() {
