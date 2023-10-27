@@ -12,7 +12,6 @@ let farmingList = [
     effect: function () {
       eggs = eggs - this.price;
       eggPerClick += 5;
-      displayEggs();
     },
   },
   {
@@ -32,11 +31,33 @@ let farmingList = [
     src: "assets/farming_icon/vitamin.png",
     effect: function () {
       eggs = eggs - this.price;
-      eggPerSecond += 10;
+      eggPerSecond += 5;
     },
   },
 ];
 
+let bonusList = [
+  {
+    name: "Dragon Ball",
+    description: "increase your production by 5%",
+    price: 100,
+    src: "assets/bonus_icon/dragon-ball.png",
+    effect: function () {
+      eggs = eggs - this.price;
+      eggPerSecond *= 0.5;
+    },
+  },
+  {
+    name: "Dragon Trainer",
+    description: "increase your production by 10%",
+    price: 150,
+    src: "assets/bonus_icon/dragon_trainer.jpg",
+    effect: function () {
+      eggs = eggs - this.price;
+      eggPerSecond *= 0.1;
+    },
+  },
+];
 /**
  * fonction qui met a jour l'image de l'oeuf de dragon pour chaque palier d'oeuf debloqué
  *
@@ -112,10 +133,14 @@ function updatePageTitle() {
  */
 function saveEggs() {
   localStorage.setItem("eggs", eggs);
+  localStorage.setItem("EggPerSecond", eggPerSecond);
+  localStorage.setItem("EggPerClick", eggPerClick);
 }
 
 function loadEggs() {
   const savedEggs = localStorage.getItem("eggs");
+  const savedEggPerSecond = localStorage.getItem("EggPerSecond");
+  const savedEggPerClick = localStorage.getItem("EggPerClick");
   if (savedEggs !== null) {
     eggs = parseInt(savedEggs);
   }
@@ -148,18 +173,27 @@ function randomEggBonus() {
 }
 
 function updateButtonsState() {
-  const buttons = Array.from(document.querySelectorAll(".farming_button"));
+  const farmingButtons = Array.from(
+    document.querySelectorAll(".farming_button")
+  );
+  const bonusButtons = Array.from(document.querySelectorAll(".bonus_button"));
 
-  buttons.forEach((button) => {
-    // Obtenez le prix de la carte associée à partir de l'attribut "price" de l'élément
-    const price = parseInt(button.dataset.price);
-
-    // Vérifiez si le bouton doit être activé ou désactivé
+  function updateButtonState(button, price) {
     if (eggs >= price) {
       button.removeAttribute("disabled");
     } else {
       button.setAttribute("disabled", "disabled");
     }
+  }
+
+  farmingButtons.forEach((button) => {
+    const price = parseInt(button.dataset.price);
+    updateButtonState(button, price);
+  });
+
+  bonusButtons.forEach((button) => {
+    const price = parseInt(button.dataset.price);
+    updateButtonState(button, price);
   });
 }
 
@@ -206,6 +240,49 @@ function generateCards() {
 
     // Ajoutez la carte clonée à la section "farming"
     farmingSection.appendChild(cardClone);
+  });
+
+  bonusList.forEach((cardData) => {
+    // Récupérez la section "farming" où vous souhaitez ajouter les cartes
+    const bonusSection = document.querySelector(".bonus");
+
+    // Récupérez le modèle de carte
+    const bonusCardTemplate = document.getElementById("bonus-card-template");
+    // Clonez le modèle
+    const cardClone = document.importNode(bonusCardTemplate.content, true);
+    // Récupérez les éléments de la carte clonée
+    const card = cardClone.querySelector(".card");
+    const image = card.querySelector(".bonus_img");
+    const title = card.querySelector(".bonus_title");
+    const description = card.querySelector(".bonus_desc");
+    const button = card.querySelector(".bonus_button");
+
+    // Remplissez les données de la carte avec les données de farmingList
+    image.src = cardData.src;
+    title.textContent = cardData.name; // Utilisez le nom de l'élément comme titre
+    description.textContent = cardData.description;
+    button.textContent = `Price: ${cardData.price}`;
+
+    button.dataset.price = cardData.price;
+
+    // Vérifiez si le bouton doit être activé ou désactivé
+    if (eggs >= cardData.price) {
+      button.removeAttribute("disabled");
+    } else {
+      button.setAttribute("disabled", "disabled");
+    }
+
+    // Ajoutez un gestionnaire de clic au bouton
+    button.addEventListener("click", () => {
+      // Vérifiez à nouveau si le bouton est activé avant d'appeler la fonction effect
+      if (!button.hasAttribute("disabled")) {
+        // Appel de la fonction effect
+        cardData.effect();
+      }
+    });
+
+    // Ajoutez la carte clonée à la section "farming"
+    bonusSection.appendChild(cardClone);
   });
 }
 
