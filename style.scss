@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
-*:focus {
-  outline: none;
-}
+
 * {
   margin: 0;
   padding: 0;
@@ -90,6 +88,9 @@ html {
     justify-content: center;
     color: white;
     font-size: 3.5rem;
+    #egg-container:focus {
+      outline: none;
+    }
     cursor: pointer;
     img {
       width: 350px;
