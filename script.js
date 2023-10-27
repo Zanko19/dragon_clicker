@@ -1,15 +1,28 @@
-let eggs = 999;
-let eggPerSecond = 1;
+"use strict"
+let eggs = 0;
+let eggPerSecond = 0;
 let eggPerClick = 1;
 
-let boutiqueList = [
+let farmingList = [
   {
     name: "Fleche",
     description: "Augmente le nombre d'oeufs par clic",
     price: 30,
     src: "assets/farming_icon/arrow.jpg",
     effect: function () {
+      eggs = eggs - this.price;
+      this.price*=2;
       eggPerClick += 5;
+    },
+  },
+  {
+    name: "Forgeron",
+    description: "+2% de production oeuf par seconde",
+    price: 60,
+    src: "assets/farming_icon/forge.jpg",
+    effect: function () {
+      eggs = eggs - this.price;
+      eggPerSecond += 5;
     },
   },
   {
@@ -18,20 +31,12 @@ let boutiqueList = [
     price: 60,
     src: "assets/farming_icon/vitamin.png",
     effect: function () {
-      eggPerSecond = 5;
-    },
-  },
-  {
-    name: "Forgeron",
-    description: "+2% de production oeuf par seconde",
-    price: 100,
-    src: "assets/farming_icon/forge.jpg",
-    effect: function () {
-      eggPerSecond += 1;
-      // eggPerSecond += (eggPerSecond * 0.02);
+      eggs = eggs - this.price;
+      eggPerSecond += 10;
     },
   },
 ];
+
 
 /**
  * fonction qui met a jour l'image de l'oeuf de dragon pour chaque palier d'oeuf debloqué
@@ -84,7 +89,9 @@ function addEggs(nb) {
   displayEggs();
   updateEggImage();
   updatePageTitle();
+  updateButtonsState();
 }
+
 
 function addEggPerSecond() {
   setInterval(addEggs(eggPerSecond), 1000);
@@ -118,7 +125,10 @@ function loadEggs() {
 
 function displayEggs() {
   const eggCounter = document.getElementById("egg-count");
+  const eggPerSecCounter = document.getElementById("eggPerSec-count");
+
   eggCounter.innerHTML = "Eggs : " + eggs;
+  eggPerSecCounter.innerHTML = "Eggs/second: " + eggPerSecond;
 }
 
 function RandomEggBonus() {
@@ -139,7 +149,79 @@ function RandomEggBonus() {
   }, nextBonusTime);
 }
 
+function updateButtonsState() {
+  const buttons = Array.from(document.querySelectorAll(".farming_button"));
+
+  buttons.forEach(button => {
+    // Obtenez le prix de la carte associée à partir de l'attribut "price" de l'élément
+    const price = parseInt(button.dataset.price);
+
+    // Vérifiez si le bouton doit être activé ou désactivé
+    if (eggs >= price) {
+      button.removeAttribute("disabled");
+    } else {
+      button.setAttribute("disabled", "disabled");
+    }
+  });
+}
+
+
+function generateCards() {
+  // Parcourez la liste farmingList
+  farmingList.forEach(cardData => {
+    // Récupérez la section "farming" où vous souhaitez ajouter les cartes
+    const farmingSection = document.querySelector(".farming");
+
+    // Récupérez le modèle de carte
+    const cardTemplate = document.getElementById("card-template");
+    // Clonez le modèle
+    const cardClone = document.importNode(cardTemplate.content, true);
+    // Récupérez les éléments de la carte clonée
+    const card = cardClone.querySelector(".card");
+    const image = card.querySelector(".farming_img");
+    const title = card.querySelector(".farming_title");
+    const description = card.querySelector(".farming_desc");
+    const button = card.querySelector(".farming_button");
+
+    // Remplissez les données de la carte avec les données de farmingList
+    image.src = cardData.src;
+    title.textContent = cardData.name; // Utilisez le nom de l'élément comme titre
+    description.textContent = cardData.description;
+    button.textContent = `Price: ${cardData.price}`;
+
+    button.dataset.price = cardData.price;
+
+    // Vérifiez si le bouton doit être activé ou désactivé
+    if (eggs >= cardData.price) {
+      button.removeAttribute("disabled");
+    } else {
+      button.setAttribute("disabled", "disabled");
+    }
+
+
+    // Ajoutez un gestionnaire de clic au bouton
+    button.addEventListener("click", () => {
+      // Vérifiez à nouveau si le bouton est activé avant d'appeler la fonction effect
+      if (!button.hasAttribute("disabled")) {
+        // Appel de la fonction effect
+        cardData.effect();
+      }
+    });
+
+    // Ajoutez la carte clonée à la section "farming"
+    farmingSection.appendChild(cardClone);
+  });
+
+}
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
+  generateCards();
+  startAutoClick()
+
+
   const eggImage = document.getElementById("egg-image");
 
   // effet de bouton sur l'oeuf
