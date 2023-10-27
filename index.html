@@ -1,63 +1,57 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="shortcut icon"
-      href="assets/dragon_egg/oeuf_dragon_1.png"
-      type="image/x-icon"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js"></script>
-    <title>Dragon Clicker</title>
-  </head>
-  <body>
-    <main class="container">
-      <div id="shop-container">
-        <div class="bonus_container">
-          <h1 class="shop">Shop</h1>
-          <h1>Bonus</h1>
-          <section class="bonus">
-            <div class="card">
-              <img
-                class="bonus_img"
-                src="assets/bonus_icon/dragon-ball.png"
-                alt=""
-                title=""
-              />
-              <h5 class="bonus_title">Dragon Ball</h5>
-              <p class="bonus_desc">descritpion</p>
-              <p>Niv 1</p>
-              <button class="bonus_button" id="price">price</button>
-            </div>
-            <div class="card">
-              <img
-                class="bonus_img"
-                src="assets/bonus_icon/dragon_trainer.jpg"
-                alt=""
-                title=""
-              />
-              <h5 class="bonus_title">Dragon Trainer</h5>
-              <p class="bonus_desc">descritpion</p>
-              <p>Niv 1</p>
-              <button class="bonus_button" id="price">price</button>
-            </div>
-          </section>
-        </div>
-        <hr />
-        <div class="farming_container">
-          <h1>Farming</h1>
-          <section class="farming">
-            <div class="card">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="assets/dragon_egg/oeuf_dragon_1.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="script.js"></script>
+  <title>Dragon Clicker</title>
+</head>
+
+<body>
+  <main class="container">
+    <div id="shop-container">
+      <div class="bonus_container">
+        <h1 class="shop">Shop</h1>
+        <h1>Bonus</h1>
+        <section class="bonus">
+          <div class="card">
+            <img class="bonus_img" src="assets/bonus_icon/dragon-ball.png" alt="" title="" />
+            <h5 class="bonus_title">Dragon Ball</h5>
+            <p class="bonus_desc">descritpion</p>
+            <p>Niv 1</p>
+            <button class="bonus_button" id="price">price</button>
+          </div>
+
+          <div class="card">
+            <img class="bonus_img" src="assets/bonus_icon/dragon_trainer.jpg" alt="" title="" />
+            <h5 class="bonus_title">Dragon Trainer</h5>
+            <p class="bonus_desc">descritpion</p>
+            <p>Niv 1</p>
+            <button class="bonus_button" id="price">price</button>
+          </div>
+        </section>
+      </div>
+
+      <hr />
+
+      <div class="farming_container">
+        <h1>Farming</h1>
+        <section class="farming">
+
+          <!-- <div class="card">
               <img
                 class="bonus_img"
                 src="assets/farming_icon/arrow.jpg"
                 alt=""
                 title=""
-              />
+                />
               <h5 class="bonus_title">bonus title + bonus level</h5>
               <p class="bonus_desc">descritpion</p>
               <button class="bonus_button" id="price">price</button>
             </div>
+
+
             <div class="card">
               <img
                 class="bonus_img"
@@ -69,140 +63,119 @@
               <p class="bonus_desc">descritpion</p>
               <button class="bonus_button" id="price">price</button>
             </div>
+
             <div class="card">
               <img
                 class="bonus_img"
                 src="assets/farming_icon/vitamin.png"
                 alt=""
                 title=""
-              />
+                />
               <h5 class="bonus_title">bonus title + bonus level</h5>
               <p class="bonus_desc">descritpion</p>
               <button class="bonus_button" id="price">price</button>
+            </div> -->
+
+          <template id="card-template">
+            <div class="card">
+              <img class="farming_img" src="" alt="" title="">
+              <h5 class="farming_title"></h5>
+              <p class="farming_desc"></p>
+              <button class="farming_button" id="price">price</button>
             </div>
-          </section>
+          </template>
+
+        </section>
+      </div>
+    </div>
+
+    <div id="egg-container">
+      <img id="egg-image" src="assets/dragon_egg/oeuf_dragon_1.png" alt="" />
+      <p id="egg-count">Eggs</p>
+      <p id="eggPerSec-count">E/second</p>
+    </div>
+
+    <div id="cards-container">
+      <h1>Own Bonus</h1>
+      <div class="own_bonus">
+        <div class="card">
+          <img class="card_img" src="assets/bonus_icon/dragon-ball.png" alt="" title="" />
+          <h5 class="card_title">bonus title + bonus level</h5>
+          <p class="card_desc">descritpion</p>
+          <div class="number">0</div>
+        </div>
+        <div class="card">
+          <img class="card_img" src="assets/bonus_icon/dragon_trainer.jpg" alt="" title="" />
+          <h5 class="card_title">bonus title + bonus level</h5>
+          <p class="card_desc">descritpion</p>
+          <div class="number">0</div>
         </div>
       </div>
-
-      <div id="egg-container">
-        <img id="egg-image" src="assets/dragon_egg/oeuf_dragon_1.png" alt="" />
-        <p id="egg-count">Eggs</p>
-        <p id="eggPerSec-count">E/second</p>
-      </div>
-
-      <div id="cards-container">
-        <h1>Own Bonus</h1>
-        <div class="own_bonus">
-          <div class="card">
-            <img
-              class="card_img"
-              src="assets/bonus_icon/dragon-ball.png"
-              alt=""
-              title=""
-            />
-            <h5 class="card_title">bonus title + bonus level</h5>
-            <p class="card_desc">descritpion</p>
-            <div class="number">0</div>
-          </div>
-          <div class="card">
-            <img
-              class="card_img"
-              src="assets/bonus_icon/dragon_trainer.jpg"
-              alt=""
-              title=""
-            />
-            <h5 class="card_title">bonus title + bonus level</h5>
-            <p class="card_desc">descritpion</p>
-            <div class="number">0</div>
-          </div>
+      <hr />
+      <div class="own_farming">
+        <div class="card">
+          <img class="card_img" src="assets/farming_icon/arrow.jpg" alt="" title="" />
+          <h5 class="card_title">Arrow</h5>
+          <p class="card_desc">descritpion</p>
+          <p>0</p>
         </div>
-        <hr />
-        <div class="own_farming">
-          <div class="card">
-            <img
-              class="card_img"
-              src="assets/farming_icon/arrow.jpg"
-              alt=""
-              title=""
-            />
-            <h5 class="card_title">Arrow</h5>
-            <p class="card_desc">descritpion</p>
-            <p>0</p>
-          </div>
-          <div class="card">
-            <img
-              class="card_img"
-              src="assets/farming_icon/forge.jpg"
-              alt=""
-              title=""
-            />
-            <h5 class="card_title">Forge</h5>
-            <p class="card_desc">descritpion</p>
-            <p>0</p>
-          </div>
-          <div class="card">
-            <img
-              class="card_img"
-              src="assets/farming_icon/vitamin.png"
-              alt=""
-              title=""
-            />
-            <h5 class="card_title">Vitamin</h5>
-            <p class="card_desc">descritpion</p>
-            <p>0</p>
-          </div>
+        <div class="card">
+          <img class="card_img" src="assets/farming_icon/forge.jpg" alt="" title="" />
+          <h5 class="card_title">Forge</h5>
+          <p class="card_desc">descritpion</p>
+          <p>0</p>
+        </div>
+        <div class="card">
+          <img class="card_img" src="assets/farming_icon/vitamin.png" alt="" title="" />
+          <h5 class="card_title">Vitamin</h5>
+          <p class="card_desc">descritpion</p>
+          <p>0</p>
         </div>
       </div>
+    </div>
 
-      <!-- Cookie Banner -->
-      <div
-        id="cb-cookie-banner"
-        class="alert alert-dark text-center mb-0"
-        role="alert"
-      >
-        <div class="game-rules">
-          Règles du jeu - Dragon Clicker
-          <p>
-            <strong>Objectif du jeu :</strong> L'objectif principal du jeu est
-            de collecter un nombre spécifique d'œufs de dragon pour
-            déverrouiller des objets dans la boutique et améliorer votre jeu.
-          </p>
-          <p>
-            <strong>Collecte d'œufs :</strong> Au début du jeu, vous commencez
-            avec zéro œuf de dragon. Pour collecter des œufs, cliquez sur
-            l'image de l'œuf de dragon située au centre de l'écran.
-          </p>
-          <p>
-            <strong>Boutique :</strong> Une fois que vous avez suffisamment
-            d'œufs de dragon, vous pouvez accéder à la boutique. Dans la
-            boutique, vous pouvez acheter différents objets et bonus pour
-            améliorer votre jeu.
-          </p>
-          <p>
-            <strong>Objets de la boutique :</strong> La boutique propose une
-            variété d'objets, tels que des améliorations pour la collecte
-            d'œufs, des améliorations pour la vitesse de collecte, des
-            décorations et d'autres articles. Chaque objet a un coût en œufs de
-            dragon.
-          </p>
-          <p>
-            <strong>Bonus :</strong> En plus des objets, la boutique propose des
-            bonus temporaires qui peuvent augmenter votre production d'œufs de
-            dragon pendant un certain temps.
-          </p>
-        </div>
-
-        <button
-          type="button"
-          class="btn btn-primary btn-sm ms-3"
-          onclick="window.cb_hideCookieBanner()"
-        >
-          I Got It
-        </button>
+    <!-- Cookie Banner -->
+    <div id="cb-cookie-banner" class="alert alert-dark text-center mb-0" role="alert">
+      <div class="game-rules">
+        Règles du jeu - Dragon Clicker
+        <p>
+          <strong>Objectif du jeu :</strong> L'objectif principal du jeu est
+          de collecter un nombre spécifique d'œufs de dragon pour
+          déverrouiller des objets dans la boutique et améliorer votre jeu.
+        </p>
+        <p>
+          <strong>Collecte d'œufs :</strong> Au début du jeu, vous commencez
+          avec zéro œuf de dragon. Pour collecter des œufs, cliquez sur
+          l'image de l'œuf de dragon située au centre de l'écran.
+        </p>
+        <p>
+          <strong>Boutique :</strong> Une fois que vous avez suffisamment
+          d'œufs de dragon, vous pouvez accéder à la boutique. Dans la
+          boutique, vous pouvez acheter différents objets et bonus pour
+          améliorer votre jeu.
+        </p>
+        <p>
+          <strong>Objets de la boutique :</strong> La boutique propose une
+          variété d'objets, tels que des améliorations pour la collecte
+          d'œufs, des améliorations pour la vitesse de collecte, des
+          décorations et d'autres articles. Chaque objet a un coût en œufs de
+          dragon.
+        </p>
+        <p>
+          <strong>Bonus :</strong> En plus des objets, la boutique propose des
+          bonus temporaires qui peuvent augmenter votre production d'œufs de
+          dragon pendant un certain temps.
+        </p>
       </div>
-      <!-- End of Cookie Banner -->
-    </main>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+      <button type="button" class="btn btn-primary btn-sm ms-3" onclick="window.cb_hideCookieBanner()">
+        I Got It
+      </button>
+    </div>
+    <!-- End of Cookie Banner -->
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
