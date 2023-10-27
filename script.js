@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 let eggs = 0;
 let eggPerSecond = 0;
 let eggPerClick = 1;
@@ -11,8 +11,8 @@ let farmingList = [
     src: "assets/farming_icon/arrow.jpg",
     effect: function () {
       eggs = eggs - this.price;
-      this.price*=2;
       eggPerClick += 5;
+      displayEggs();
     },
   },
   {
@@ -36,7 +36,6 @@ let farmingList = [
     },
   },
 ];
-
 
 /**
  * fonction qui met a jour l'image de l'oeuf de dragon pour chaque palier d'oeuf debloqué
@@ -92,7 +91,6 @@ function addEggs(nb) {
   updateButtonsState();
 }
 
-
 function addEggPerSecond() {
   setInterval(addEggs(eggPerSecond), 1000);
 }
@@ -131,28 +129,28 @@ function displayEggs() {
   eggPerSecCounter.innerHTML = "Eggs/second: " + eggPerSecond;
 }
 
-function RandomEggBonus() {
-  // Bonus aléatoire entre 50 000 et 200 000 œufs
-  const bonusEggs = Math.floor(Math.random() * 150001) + 50000;
-  eggs = eggs + bonusEggs;
+function randomEggBonus() {
+  setInterval(function () {
+    const bonusEggs = Math.floor(Math.random() * 901) + 100; // Génère un nombre entre 100 et 1000
+    eggs += bonusEggs;
 
-  // Bonus aléatoire entre 2 et 5 minutes
-  const nextBonusTime = Math.floor(Math.random() * 180000) + 120000;
-  setTimeout(function () {
-    // Après un délai entre 2 et 5 minutes, on ajoute le bonus ajouté (entre 10 et 30seconde)
-    const addBonusTime = Math.floor(Math.random() * 20000) + 10000;
+    // Affichage de la notification
+    const notification = document.getElementById("egg-notification");
+    const bonusEggsElement = document.getElementById("bonus-eggs");
+    bonusEggsElement.textContent = bonusEggs;
+    notification.style.display = "block";
 
+    // Masquage de la notification après quelques secondes (par exemple, 5 secondes)
     setTimeout(function () {
-      // Additionne le montant du bonus du score actuel
-      eggs = eggs + bonusEggs;
-    }, addBonusTime);
-  }, nextBonusTime);
+      notification.style.display = "none";
+    }, 2000);
+  }, 120000); // 120000 millisecondes équivalent à 2 minutes
 }
 
 function updateButtonsState() {
   const buttons = Array.from(document.querySelectorAll(".farming_button"));
 
-  buttons.forEach(button => {
+  buttons.forEach((button) => {
     // Obtenez le prix de la carte associée à partir de l'attribut "price" de l'élément
     const price = parseInt(button.dataset.price);
 
@@ -165,10 +163,9 @@ function updateButtonsState() {
   });
 }
 
-
 function generateCards() {
   // Parcourez la liste farmingList
-  farmingList.forEach(cardData => {
+  farmingList.forEach((cardData) => {
     // Récupérez la section "farming" où vous souhaitez ajouter les cartes
     const farmingSection = document.querySelector(".farming");
 
@@ -198,7 +195,6 @@ function generateCards() {
       button.setAttribute("disabled", "disabled");
     }
 
-
     // Ajoutez un gestionnaire de clic au bouton
     button.addEventListener("click", () => {
       // Vérifiez à nouveau si le bouton est activé avant d'appeler la fonction effect
@@ -211,16 +207,11 @@ function generateCards() {
     // Ajoutez la carte clonée à la section "farming"
     farmingSection.appendChild(cardClone);
   });
-
 }
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   generateCards();
-  startAutoClick()
-
+  startAutoClick();
 
   const eggImage = document.getElementById("egg-image");
 
@@ -234,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadEggs();
 
-  // RandomEggBonus();
+  randomEggBonus();
   // addEggPerSecond();
 
   eggImage.addEventListener("click", function () {

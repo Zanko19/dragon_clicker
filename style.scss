@@ -64,11 +64,13 @@ html {
           -webkit-backdrop-filter: blur(10.5px);
           border-radius: 10px;
           border: 1px solid rgba(255, 255, 255, 0.18);
-          .bonus_img,.farming_img {
+          .bonus_img,
+          .farming_img {
             object-fit: cover;
             width: 100px;
           }
-          .bonus_button ,.farming_button{
+          .bonus_button,
+          .farming_button {
             cursor: pointer;
             padding: 5px;
             border-radius: 10px;
@@ -90,11 +92,25 @@ html {
     img {
       width: 350px;
     }
-    #egg-count,#eggPerSec-count{
+    #egg-count,
+    #eggPerSec-count {
       background-color: #ff2500;
       border-radius: 25px;
       padding: 15px;
       box-shadow: 32px 56px 80px rgba(0, 0, 0, 0.61);
+    }
+    .notification {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff2500;
+      color: #fff;
+      padding: 10px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      text-align: center;
     }
   }
   #cards-container {
