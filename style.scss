@@ -44,6 +44,7 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 5px;
         h1 {
           color: #fff;
         }
@@ -113,7 +114,7 @@ html {
     .own_bonus,
     .own_farming {
       display: flex;
-      gap: 2px;
+      gap: 5px;
       .card {
         margin-top: 3rem;
         max-width: 150px;
