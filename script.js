@@ -8,30 +8,39 @@ let farmingList = [
     name: "Fleche",
     description: "Augmente le nombre d'oeufs par clic",
     price: 30,
+    level:0,
     src: "assets/farming_icon/arrow.jpg",
     effect: function () {
       eggs = eggs - this.price;
       eggPerClick += 5;
+      this.level++;
+      document.getElementById("arrow-nb").textContent = this.level
     },
   },
   {
     name: "Forgeron",
     description: "+2% de production oeuf par seconde",
     price: 60,
+    level:0,
     src: "assets/farming_icon/forge.jpg",
     effect: function () {
       eggs = eggs - this.price;
       eggPerSecond += 5;
+      this.level++;
+      document.getElementById("forge-nb").textContent = this.level
     },
   },
   {
     name: "Vitamines",
     description: "Augmente le nombre d'oeufs par seconde (5)",
-    price: 60,
+    price: 60,    
+    level:0,
     src: "assets/farming_icon/vitamin.png",
     effect: function () {
       eggs = eggs - this.price;
       eggPerSecond += 5;
+      this.level++;
+      document.getElementById("vit-nb").textContent = this.level;
     },
   },
 ];
@@ -41,20 +50,26 @@ let bonusList = [
     name: "Dragon Ball",
     description: "multiply your egg per second by 2",
     price: 100,
+    level:0,
     src: "assets/bonus_icon/dragon-ball.png",
     effect: function () {
       eggs = eggs - this.price;
       eggPerSecond *= 2;
+      this.level++;
+      document.getElementById("dball-number").textContent = this.level
     },
   },
   {
     name: "Dragon Trainer",
     description: "multiply your egg per second by 5",
     price: 150,
+    level:0,
     src: "assets/bonus_icon/dragon_trainer.jpg",
     effect: function () {
       eggs = eggs - this.price;
       eggPerSecond *= 5;
+      this.level++;
+      document.getElementById("trainer-number").textContent = this.level;
     },
   },
 ];
@@ -195,11 +210,44 @@ function updateButtonsState() {
   farmingButtons.forEach((button) => {
     const price = parseInt(button.dataset.price);
     updateButtonState(button, price);
+
+    button.addEventListener("click", () => {
+      if (!button.hasAttribute("disabled")) {
+        button.setAttribute("disabled", "disabled"); // Désactive le bouton
+
+        if (eggs >= cardData.price) {
+          cardData.effect();
+
+          // Après avoir effectué l'achat, mettez à jour le montant d'œufs et l'état des boutons
+          eggs -= cardData.price;
+          displayEggs();
+          updateButtonsState();
+        }
+
+        button.removeAttribute("disabled"); // Réactive le bouton
+      }
+    });
   });
 
   bonusButtons.forEach((button) => {
     const price = parseInt(button.dataset.price);
     updateButtonState(button, price);
+    button.addEventListener("click", () => {
+      if (!button.hasAttribute("disabled")) {
+        button.setAttribute("disabled", "disabled"); // Désactive le bouton
+
+        if (eggs >= cardData.price) {
+          cardData.effect();
+
+          // Après avoir effectué l'achat, mettez à jour le montant d'œufs et l'état des boutons
+          eggs -= cardData.price;
+          displayEggs();
+          updateButtonsState();
+        }
+
+        button.removeAttribute("disabled"); // Réactive le bouton
+      }
+    });
   });
 }
 
