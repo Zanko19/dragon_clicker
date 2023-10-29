@@ -5,39 +5,39 @@ let eggPerClick = 1;
 let farmingList = [
   {
     name: "Fleche",
-    description: "Augmente le nombre d'oeufs par clic",
+    description: "Augmente le nombre d'oeufs par clic (2)",
     price: 30,
     level: 0,
     src: "assets/farming_icon/arrow.jpg",
     effect: function () {
       eggs = eggs - this.price;
-      eggPerClick += 5;
+      eggPerClick += 2;
       this.level++;
       document.getElementById("arrow-nb").textContent = this.level;
     },
   },
   {
     name: "Forgeron",
-    description: "+2% de production oeuf par seconde",
+    description: "multiplie les oeufs par seconde par 1.5",
     price: 60,
     level: 0,
     src: "assets/farming_icon/forge.jpg",
     effect: function () {
       eggs = eggs - this.price;
-      eggPerSecond += 5;
+      eggPerSecond = eggPerSecond + eggPerSecond * 1.5;
       this.level++;
       document.getElementById("forge-nb").textContent = this.level;
     },
   },
   {
     name: "Vitamines",
-    description: "Augmente le nombre d'oeufs par seconde (5)",
+    description: "Augmente le nombre d'oeufs par seconde (2)",
     price: 60,
     level: 0,
     src: "assets/farming_icon/vitamin.png",
     effect: function () {
       eggs = eggs - this.price;
-      eggPerSecond += 5;
+      eggPerSecond += 2;
       this.level++;
       document.getElementById("vit-nb").textContent = this.level;
     },
@@ -47,13 +47,13 @@ let farmingList = [
 let bonusList = [
   {
     name: "Dragon Ball",
-    description: "multiply your egg per second by 2",
+    description: "multiply your egg per second by 1.5",
     price: 100,
     level: 0,
     src: "assets/bonus_icon/dragon-ball.png",
     effect: function () {
       eggs = eggs - this.price;
-      eggPerSecond *= 2;
+      eggPerSecond *= 1.5;
       this.level++;
       document.getElementById("dball-number").textContent = this.level;
     },
@@ -66,7 +66,7 @@ let bonusList = [
     src: "assets/bonus_icon/dragon_trainer.jpg",
     effect: function () {
       eggs = eggs - this.price;
-      eggPerSecond *= 5;
+      eggPerSecond *= 2;
       this.level++;
       document.getElementById("trainer-number").textContent = this.level;
     },
@@ -85,37 +85,34 @@ function updateEggImage() {
     case eggs < 100:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_5.png";
       break;
-    case eggs < 500:
+    case eggs < 5000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_4.png";
       break;
-    case eggs < 1000:
+    case eggs < 10000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_6.png";
       break;
-    case eggs < 2000:
+    case eggs < 20000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_7.png";
       break;
-    case eggs < 5000:
+    case eggs < 50000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_9.png";
       break;
-    case eggs < 8000:
+    case eggs < 80000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_10.png";
       break;
-    case eggs < 10000:
+    case eggs < 100000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_8.png";
       break;
-    case eggs < 15000:
+    case eggs < 150000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_3.png";
       break;
-    case eggs < 20000:
+    case eggs < 200000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_12.png";
       break;
-    case eggs < 25000:
+    case eggs < 250000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_2.png";
       break;
-    case eggs < 30000:
-      eggImg.src = "assets/dragon_egg/oeuf_dragon_1.png";
-      break;
-    case eggs < 50000:
+    case eggs > 500000:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_11.png";
       break;
   }
@@ -148,7 +145,7 @@ function updatePageTitle() {
 
 /**
  * function localStorage
-*/
+ */
 function saveEggs() {
   localStorage.setItem("eggs", eggs);
   localStorage.setItem("eggPerSecond", eggPerSecond);
