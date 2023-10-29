@@ -1,6 +1,6 @@
 # Dragon Clicker (en cours) 🐉
 
-[Jouez dès maintenant](URL_DU_SITE)
+[Jouez dès maintenant](https://justindr96.github.io/dragon_clicker/)
 
 ## Équipe
 
