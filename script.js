@@ -8,33 +8,33 @@ let farmingList = [
     name: "Fleche",
     description: "Augmente le nombre d'oeufs par clic",
     price: 30,
-    level:0,
+    level: 0,
     src: "assets/farming_icon/arrow.jpg",
     effect: function () {
       eggs = eggs - this.price;
       eggPerClick += 5;
       this.level++;
-      document.getElementById("arrow-nb").textContent = this.level
+      document.getElementById("arrow-nb").textContent = this.level;
     },
   },
   {
     name: "Forgeron",
     description: "+2% de production oeuf par seconde",
     price: 60,
-    level:0,
+    level: 0,
     src: "assets/farming_icon/forge.jpg",
     effect: function () {
       eggs = eggs - this.price;
       eggPerSecond += 5;
       this.level++;
-      document.getElementById("forge-nb").textContent = this.level
+      document.getElementById("forge-nb").textContent = this.level;
     },
   },
   {
     name: "Vitamines",
     description: "Augmente le nombre d'oeufs par seconde (5)",
-    price: 60,    
-    level:0,
+    price: 60,
+    level: 0,
     src: "assets/farming_icon/vitamin.png",
     effect: function () {
       eggs = eggs - this.price;
@@ -50,20 +50,20 @@ let bonusList = [
     name: "Dragon Ball",
     description: "multiply your egg per second by 2",
     price: 100,
-    level:0,
+    level: 0,
     src: "assets/bonus_icon/dragon-ball.png",
     effect: function () {
       eggs = eggs - this.price;
       eggPerSecond *= 2;
       this.level++;
-      document.getElementById("dball-number").textContent = this.level
+      document.getElementById("dball-number").textContent = this.level;
     },
   },
   {
     name: "Dragon Trainer",
     description: "multiply your egg per second by 5",
     price: 150,
-    level:0,
+    level: 0,
     src: "assets/bonus_icon/dragon_trainer.jpg",
     effect: function () {
       eggs = eggs - this.price;
@@ -80,6 +80,9 @@ let bonusList = [
 function updateEggImage() {
   let eggImg = document.getElementById("egg-image");
   switch (true) {
+    case eggs < 0:
+      eggImg.src = "assets/dragon_egg/oeuf_dragon_1.png";
+      break;
     case eggs < 100:
       eggImg.src = "assets/dragon_egg/oeuf_dragon_5.png";
       break;
@@ -343,7 +346,6 @@ function generateCards() {
 document.addEventListener("DOMContentLoaded", function () {
   generateCards();
   startAutoClick();
-
   const eggImage = document.getElementById("egg-image");
 
   // effet de bouton sur l'oeuf
