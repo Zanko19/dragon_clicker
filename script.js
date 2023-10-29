@@ -16,23 +16,11 @@ let farmingList = [
       document.getElementById("arrow-nb").textContent = this.level;
     },
   },
-  {
-    name: "Forgeron",
-    description: "multiplie les oeufs par seconde par 1.5",
-    price: 100,
-    level: 0,
-    src: "assets/farming_icon/forge.jpg",
-    effect: function () {
-      eggs = eggs - this.price;
-      eggPerSecond = eggPerSecond + eggPerSecond * 1.5;
-      this.level++;
-      document.getElementById("forge-nb").textContent = this.level;
-    },
-  },
+
   {
     name: "Vitamines",
     description: "Augmente le nombre d'oeufs par seconde (2)",
-    price: 200,
+    price: 100,
     level: 0,
     src: "assets/farming_icon/vitamin.png",
     effect: function () {
@@ -40,6 +28,19 @@ let farmingList = [
       eggPerSecond += 2;
       this.level++;
       document.getElementById("vit-nb").textContent = this.level;
+    },
+  },
+  {
+    name: "Forgeron",
+    description: "multiplie les oeufs par seconde par 1.5",
+    price: 200,
+    level: 0,
+    src: "assets/farming_icon/forge.jpg",
+    effect: function () {
+      eggs = eggs - this.price;
+      eggPerSecond = eggPerSecond + eggPerSecond * 1.5;
+      this.level++;
+      document.getElementById("forge-nb").textContent = this.level;
     },
   },
 ];
