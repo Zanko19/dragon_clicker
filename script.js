@@ -67,7 +67,7 @@ let bonusList = [
     src: "assets/bonus_icon/dragon_trainer.jpg",
     effect: function () {
       eggs = eggs - this.price;
-      eggPerSecond *= 2;
+      eggPerSecond *= 5;
       this.level++;
       document.getElementById("trainer-number").textContent = this.level;
     },
