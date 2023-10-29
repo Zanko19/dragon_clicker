@@ -335,6 +335,10 @@ function generateCards() {
       // Vérifiez à nouveau si le bouton est activé avant d'appeler la fonction effect
       if (!button.hasAttribute("disabled")) {
         // Appel de la fonction effect
+
+        cardData.price *= 1.5;
+
+        button.textContent = `Price: ${cardData.price}`;
         cardData.effect();
       }
     });
@@ -378,6 +382,9 @@ function generateCards() {
       // Vérifiez à nouveau si le bouton est activé avant d'appeler la fonction effect
       if (!button.hasAttribute("disabled")) {
         // Appel de la fonction effect
+        cardData.price *= 1.5;
+
+        button.textContent = `Price: ${cardData.price}`;
         cardData.effect();
       }
     });
