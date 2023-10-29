@@ -1,6 +1,6 @@
 # Dragon Clicker (en cours) 🐉
 
-[Jouez dès maintenant](URL_DU_SITE)
+[Jouez dès maintenant](https://justindr96.github.io/dragon_clicker/)
 
 ## Équipe
 
@@ -24,28 +24,27 @@ Ce projet est construit en utilisant les technologies suivantes :
 
 ### Captures d'Écran
 
-- [Capture d'Écran 2](URL_CAPTURE_ECRAN_2)
-- [Capture d'Écran 3](URL_CAPTURE_ECRAN_3)
+- ![Format Desktop](./assets/screen/Eggs-desktop.png)
+- ![Format Mobile](./assets/screen/Eggs-mobile.png)
+- ![Format tablet](./assets/screen/Eggs-tablet.png)
 
 ## Boutique 🏪
 
 Explorez la boutique magique pour acheter des améliorations et des ressources pour votre empire.
 
-- Flèche 🏹 : modifie oeuf/clique
-- Vitamines 💊 : modifie oeuf/seconde
-- Forgeron 🔨 : +2% de production oeuf/seconde
+- Flèche 🏹
+- Vitamines 💊
+- Forgeron 🔨
 
 ## Bonus 🌟
 
 Débloquez des bonus puissants pour améliorer votre empire et devenir un maître des oeufs de dragons !
 
-- Dresseur de Dragon I II III IV V 🐉 \* 5,10,15,20,25%
-- Dragon Ball I II III IV V 🐲 : \* 5,10,15,20,25%
+- Dresseur de Dragon 🐉
+- Dragon Ball 🐲
 
 ## Bonus Aléatoires 🎲
 
 Obtenez des bonus aléatoires pour des surprises inattendues :
 
 - 🥚 1 : Rapporte des œufs supplémentaires
-
-
