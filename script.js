@@ -10,15 +10,10 @@ let farmingList = [
     level: 0,
     src: "assets/farming_icon/arrow.jpg",
     effect: function () {
-      if (eggs >= this.price) {
-        eggs -= this.price;
-        this.level++;
-        document.getElementById("arrow-nb").textContent = this.level;
-        eggPerClick += 2;
-        displayEggs();
-        updateButtonsState();
-        saveEggs();
-      }
+      eggs -= this.price;
+      this.level++;
+      document.getElementById("arrow-nb").textContent = this.level;
+      eggPerClick += 2;
     },
   },
 
@@ -29,15 +24,10 @@ let farmingList = [
     level: 0,
     src: "assets/farming_icon/vitamin.png",
     effect: function () {
-      if (eggs >= this.price) {
-        eggs = eggs - this.price;
-        eggPerSecond += 2;
-        this.level++;
-        document.getElementById("vit-nb").textContent = this.level;
-        displayEggs();
-        updateButtonsState();
-        saveEggs();
-      }
+      eggs = eggs - this.price;
+      eggPerSecond += 2;
+      this.level++;
+      document.getElementById("vit-nb").textContent = this.level;
     },
   },
   {
@@ -47,15 +37,10 @@ let farmingList = [
     level: 0,
     src: "assets/farming_icon/forge.jpg",
     effect: function () {
-      if (eggs >= this.price) {
-        eggs = eggs - this.price;
-        eggPerSecond = eggPerSecond + eggPerSecond * 1.5;
-        this.level++;
-        document.getElementById("forge-nb").textContent = this.level;
-        displayEggs();
-        updateButtonsState();
-        saveEggs();
-      }
+      eggs = eggs - this.price;
+      eggPerSecond = eggPerSecond + eggPerSecond * 1.5;
+      this.level++;
+      document.getElementById("forge-nb").textContent = this.level;
     },
   },
 ];
@@ -68,15 +53,10 @@ let bonusList = [
     level: 0,
     src: "assets/bonus_icon/dragon-ball.png",
     effect: function () {
-      if (eggs >= this.price) {
-        eggs = eggs - this.price;
-        eggPerSecond *= 1.5;
-        this.level++;
-        document.getElementById("dball-number").textContent = this.level;
-        displayBonus();
-        updateButtonsState();
-        saveEggs();
-      }
+      eggs = eggs - this.price;
+      eggPerSecond *= 1.5;
+      this.level++;
+      document.getElementById("dball-number").textContent = this.level;
     },
   },
   {
@@ -86,15 +66,10 @@ let bonusList = [
     level: 0,
     src: "assets/bonus_icon/dragon_trainer.jpg",
     effect: function () {
-      if (eggs >= this.price) {
-        eggs = eggs - this.price;
-        eggPerSecond *= 2;
-        this.level++;
-        document.getElementById("trainer-number").textContent = this.level;
-        displayBonus();
-        updateButtonsState();
-        saveEggs();
-      }
+      eggs = eggs - this.price;
+      eggPerSecond *= 2;
+      this.level++;
+      document.getElementById("trainer-number").textContent = this.level;
     },
   },
 ];
@@ -171,7 +146,7 @@ function updatePageTitle() {
 
 /**
  * function localStorage
-*/
+ */
 function saveEggs() {
   localStorage.setItem("eggs", eggs);
   localStorage.setItem("eggPerSecond", eggPerSecond);
