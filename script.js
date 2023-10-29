@@ -173,9 +173,11 @@ function loadEggs() {
 function displayEggs() {
   const eggCounter = document.getElementById("egg-count");
   const eggPerSecCounter = document.getElementById("eggPerSec-count");
+  const eggPerClickCounter = document.getElementById("eggPerClick-count");
 
   eggCounter.innerHTML = "Eggs : " + eggs;
   eggPerSecCounter.innerHTML = "Eggs/second: " + eggPerSecond;
+  eggPerClickCounter.innerHTML = "Eggs/click: " + eggPerClick;
 }
 
 function randomEggBonus() {
