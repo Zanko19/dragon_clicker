@@ -1,4 +1,3 @@
-"use strict";
 let eggs = 0;
 let eggPerSecond = 0;
 let eggPerClick = 1;
@@ -128,6 +127,7 @@ function addEggs(nb) {
   updateEggImage();
   updatePageTitle();
   updateButtonsState();
+  saveEggs();
 }
 
 function addEggPerSecond() {
@@ -148,17 +148,45 @@ function updatePageTitle() {
 
 /**
  * function localStorage
- */
+*/
 function saveEggs() {
   localStorage.setItem("eggs", eggs);
-  localStorage.setItem("EggPerSecond", eggPerSecond);
-  localStorage.setItem("EggPerClick", eggPerClick);
+  localStorage.setItem("eggPerSecond", eggPerSecond);
+  localStorage.setItem("eggPerClick", eggPerClick);
+  // Ajoutez ces lignes pour sauvegarder le nombre de "Own Bonus"
+  localStorage.setItem(
+    "dragonBallCount",
+    document.getElementById("dball-number").textContent
+  );
+  localStorage.setItem(
+    "trainerCount",
+    document.getElementById("trainer-number").textContent
+  );
+  localStorage.setItem(
+    "arrowCount",
+    document.getElementById("arrow-nb").textContent
+  );
+  localStorage.setItem(
+    "forgeCount",
+    document.getElementById("forge-nb").textContent
+  );
+  localStorage.setItem(
+    "vitCount",
+    document.getElementById("vit-nb").textContent
+  );
 }
 
 function loadEggs() {
   const savedEggs = localStorage.getItem("eggs");
-  const savedEggPerSecond = localStorage.getItem("EggPerSecond");
-  const savedEggPerClick = localStorage.getItem("EggPerClick");
+  const savedEggPerSecond = localStorage.getItem("eggPerSecond");
+  const savedEggPerClick = localStorage.getItem("eggPerClick");
+  // Ajoutez ces lignes pour charger le nombre de "Own Bonus"
+  const savedDragonBallCount = localStorage.getItem("dragonBallCount");
+  const savedTrainerCount = localStorage.getItem("trainerCount");
+  const savedArrowCount = localStorage.getItem("arrowCount");
+  const savedForgeCount = localStorage.getItem("forgeCount");
+  const savedVitCount = localStorage.getItem("vitCount");
+
   if (savedEggs !== null) {
     eggs = parseInt(savedEggs);
   }
@@ -167,6 +195,22 @@ function loadEggs() {
   }
   if (savedEggPerClick !== null) {
     eggPerClick = parseInt(savedEggPerClick);
+  }
+  // Ajoutez ces lignes pour charger le nombre de "Own Bonus"
+  if (savedDragonBallCount !== null) {
+    document.getElementById("dball-number").textContent = savedDragonBallCount;
+  }
+  if (savedTrainerCount !== null) {
+    document.getElementById("trainer-number").textContent = savedTrainerCount;
+  }
+  if (savedArrowCount !== null) {
+    document.getElementById("arrow-nb").textContent = savedArrowCount;
+  }
+  if (savedForgeCount !== null) {
+    document.getElementById("forge-nb").textContent = savedForgeCount;
+  }
+  if (savedVitCount !== null) {
+    document.getElementById("vit-nb").textContent = savedVitCount;
   }
 }
 
@@ -348,6 +392,9 @@ function generateCards() {
 document.addEventListener("DOMContentLoaded", function () {
   generateCards();
   startAutoClick();
+  loadEggs();
+  randomEggBonus(); // addEggPerSecond();
+
   const eggImage = document.getElementById("egg-image");
 
   // effet de bouton sur l'oeuf
@@ -357,12 +404,6 @@ document.addEventListener("DOMContentLoaded", function () {
   eggImage.addEventListener("mouseup", () => {
     eggImage.style.transform = "scale(1)";
   });
-
-  loadEggs();
-
-  randomEggBonus();
-  // addEggPerSecond();
-
   eggImage.addEventListener("click", function () {
     console.log("click : " + eggs);
     addEggs(eggPerClick);
