@@ -6,7 +6,7 @@ let farmingList = [
   {
     name: "Fleche",
     description: "Augmente le nombre d'oeufs par clic (2)",
-    price: 30,
+    price: 50,
     level: 0,
     src: "assets/farming_icon/arrow.jpg",
     effect: function () {
@@ -19,7 +19,7 @@ let farmingList = [
   {
     name: "Forgeron",
     description: "multiplie les oeufs par seconde par 1.5",
-    price: 60,
+    price: 100,
     level: 0,
     src: "assets/farming_icon/forge.jpg",
     effect: function () {
@@ -32,7 +32,7 @@ let farmingList = [
   {
     name: "Vitamines",
     description: "Augmente le nombre d'oeufs par seconde (2)",
-    price: 60,
+    price: 200,
     level: 0,
     src: "assets/farming_icon/vitamin.png",
     effect: function () {
@@ -48,7 +48,7 @@ let bonusList = [
   {
     name: "Dragon Ball",
     description: "multiply your egg per second by 1.5",
-    price: 100,
+    price: 500,
     level: 0,
     src: "assets/bonus_icon/dragon-ball.png",
     effect: function () {
@@ -61,7 +61,7 @@ let bonusList = [
   {
     name: "Dragon Trainer",
     description: "multiply your egg per second by 5",
-    price: 150,
+    price: 1000,
     level: 0,
     src: "assets/bonus_icon/dragon_trainer.jpg",
     effect: function () {
