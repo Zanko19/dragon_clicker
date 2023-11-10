@@ -1,6 +1,6 @@
 # Dragon Clicker 🐉
 
-- Description courte de projet (140words max)
+- Dragon Clicker propose une aventure captivante où chaque clic sur l'œuf de dragon accumule des œufs pour débloquer des bonus et améliorations. Inspiré par le concept de Cookie Clicker, les joueurs collectent des œufs pour acheter des améliorations, boosters et auto-clics pour maximiser leur récolte. Une particularité unique est la transformation de l'œuf central à chaque palier de points atteint, offrant une expérience visuelle dynamique. Dragon Clicker propose une expérience immersive, encourageant les joueurs à cliquer, amasser et évoluer dans ce monde de dragons en constante évolution.
 
 ## Screen Live Version
 
