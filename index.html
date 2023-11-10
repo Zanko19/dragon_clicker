@@ -2,46 +2,164 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="shortcut icon"
+      href="assets/dragon_egg/oeuf_dragon_1.png"
+      type="image/x-icon"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dragon Clicker</title>
   </head>
+
   <body>
     <main class="container">
       <div id="shop-container">
-        <section class="bonus">
-          <template id="icon-bonus">
-            <img src="" alt="" title="" />
-            <h5>bonus title + bonus level</h5>
-            <p>descritpion</p>
-            <button class="price" id="price">price</button>
-          </template>
-        </section>
-        <section class="farming">
-          <template id="card-farming">
-            <img src="" alt="" title="" />
-            <h5>farming title</h5>
-            <p>Description</p>
-            <button class="price disable" id="price">price</button>
-          </template>
-        </section>
+        <div class="bonus_container">
+          <h1 class="shop">Shop</h1>
+          <h1>Bonus</h1>
+          <section class="bonus">
+            <template id="bonus-card-template">
+              <div class="card">
+                <img class="bonus_img" src="" alt="" title="" />
+                <h5 class="bonus_title"></h5>
+                <p class="bonus_desc"></p>
+                <button class="bonus_button" id="price">price</button>
+              </div>
+            </template>
+          </section>
+        </div>
+        <hr />
+        <div class="farming_container">
+          <h1>Farming</h1>
+          <section class="farming">
+            <template id="card-template">
+              <div class="card">
+                <img class="farming_img" src="" alt="" title="" />
+                <h5 class="farming_title"></h5>
+                <p class="farming_desc"></p>
+                <button class="farming_button" id="price">price</button>
+              </div>
+            </template>
+          </section>
+        </div>
       </div>
 
       <div id="egg-container">
-        <img src="assets/dragon_egg/oeuf_dragon_1.png" alt="" />
-        <p id="egg-count">counter egg</p>
+        <img id="egg-image" src="" alt="">
+        <p id="egg-count"></p>
+        <p id="eggPerSec-count"></p>
+        <p id="eggPerClick-count"></p>
+        <div id="egg-notification" class="notification">
+          You received a bonus of <span id="bonus-eggs"></span> eggs!
+        </div>
       </div>
 
       <div id="cards-container">
-        <template id="card">
+        <h1>Own Bonus</h1>
+        <div class="own_bonus">
           <div class="card">
-            <img src="" alt="" />
-            <h2>card name</h2>
-            <p>card description</p>
-            <p class="counter">card counter</p>
+            <img
+              class="card_img"
+              src="assets/bonus_icon/dragon-ball.png"
+              alt=""
+              title=""
+            />
+            <h5 class="card_title">Dragon Ball</h5>
+            <div id="dball-number">0</div>
           </div>
-        </template>
+          <div class="card">
+            <img
+              class="card_img"
+              src="assets/bonus_icon/dragon_trainer.jpg"
+              alt=""
+              title=""
+            />
+            <h5 class="card_title">Dragon Trainer</h5>
+            <div id="trainer-number">0</div>
+          </div>
+        </div>
+        <hr />
+        <div class="own_farming">
+          <div class="card">
+            <img
+              class="card_img"
+              src="assets/farming_icon/arrow.jpg"
+              alt=""
+              title=""
+            />
+            <h5 class="card_title">Arrow</h5>
+            <p id="arrow-nb">0</p>
+          </div>
+          <div class="card">
+            <img
+              class="card_img"
+              src="assets/farming_icon/forge.jpg"
+              alt=""
+              title=""
+            />
+            <h5 class="card_title">Forge</h5>
+            <p id="forge-nb">0</p>
+          </div>
+          <div class="card">
+            <img
+              class="card_img"
+              src="assets/farming_icon/vitamin.png"
+              alt=""
+              title=""
+            />
+            <h5 class="card_title">Vitamin</h5>
+            <p id="vit-nb">0</p>
+          </div>
+        </div>
       </div>
+
+      <!-- Cookie Banner -->
+      <div
+        id="cb-cookie-banner"
+        class="alert alert-dark text-center mb-0"
+        role="alert"
+      >
+        <div class="game-rules">
+          Règles du jeu - Dragon Clicker
+          <p>
+            <strong>Objectif du jeu :</strong> L'objectif principal du jeu est
+            de collecter un nombre spécifique d'œufs de dragon pour
+            déverrouiller des objets dans la boutique et améliorer votre jeu.
+          </p>
+          <p>
+            <strong>Collecte d'œufs :</strong> Au début du jeu, vous commencez
+            avec zéro œuf de dragon. Pour collecter des œufs, cliquez sur
+            l'image de l'œuf de dragon située au centre de l'écran.
+          </p>
+          <p>
+            <strong>Boutique :</strong> Une fois que vous avez suffisamment
+            d'œufs de dragon, vous pouvez accéder à la boutique. Dans la
+            boutique, vous pouvez acheter différents objets et bonus pour
+            améliorer votre jeu.
+          </p>
+          <p>
+            <strong>Objets de la boutique :</strong> La boutique propose une
+            variété d'objets, tels que des améliorations pour la collecte
+            d'œufs, des améliorations pour la vitesse de collecte, des
+            décorations et d'autres articles. Chaque objet a un coût en œufs de
+            dragon.
+          </p>
+          <p>
+            <strong>Bonus :</strong> En plus des objets, la boutique propose des
+            bonus temporaires qui peuvent augmenter votre production d'œufs de
+            dragon pendant un certain temps.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-primary btn-sm ms-3"
+          onclick="window.cb_hideCookieBanner()"
+        >
+          I Got It
+        </button>
+      </div>
+      <!-- End of Cookie Banner -->
     </main>
 
     <script type="module" src="./main.js"></script>
