@@ -6,7 +6,7 @@
 
 ![live version screen](./assets/screen/Eggs-desktop.png)
 
-## live version
+## Live version
 
 [Live Version](https://justindr96.github.io/dragon_clicker/)
 
@@ -22,6 +22,7 @@ Ce projet est construit en utilisant les technologies suivantes :
 ## Développement
 
 - npm install
+- npm install sass
 - npm run dev
 
 Copyright - 10/11/2023
