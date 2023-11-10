@@ -2,7 +2,7 @@
 
 - Description courte de projet (140words max)
 
-## Screen live Version
+## Screen Live Version
 
 ![live version screen](./assets/screen/Eggs-desktop.png)
 
